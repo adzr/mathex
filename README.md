@@ -1,34 +1,16 @@
-Mathex
-===
+# mathex
+A tiny extension to the standard math library in [Go](https://golang.org) that might grow in future.
 
-Brief
----
+[![GoDoc](https://godoc.org/github.com/adzr/mathex?status.png)](https://godoc.org/github.com/adzr/mathex) [![Build Status](https://travis-ci.org/adzr/mathex.svg?branch=master)](https://travis-ci.org/adzr/mathex) [![Coverage Status](https://coveralls.io/repos/github/adzr/mathex/badge.svg?branch=master)](https://coveralls.io/github/adzr/mathex?branch=master)
 
-I've created this library as a starter to group the extra math functions that are missing from the standard Go math package to fit my personal future development needs.
+## Documentation
+Please refer to the [godoc](https://godoc.org/github.com/adzr/mathex) pages for documentation.
 
-More functions are planned to be added soon, currently however, My focus is adding what I need for my other Go projects.
+## Versioning
+This project release version format follows [Semantic Versioning](http://semver.org/).
 
-> **Note:** The library is still in a very early stage.
+## Contributing
+Pull requests and issue reports are welcomed.
 
-Install
----
-
-```
-go get -u gitlab.com/adzr/mathex
-```
-
-Use
----
-
-```
-import (
-    "gitlab.com/adzr/mathex"
-)
-```
-
-Contribute
----
-
-Feel free to submit merge requests.
-
-Licensed under [Apache License V2](http://www.apache.org/licenses/LICENSE-2.0.txt).
+## License
+This project is licensed under [Apache License Version 2.0](http://www.apache.org/licenses/LICENSE-2.0.txt)

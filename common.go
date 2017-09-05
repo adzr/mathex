@@ -39,6 +39,11 @@ import (
 //
 // The 'places' parameter indicates how many places the decimal point will move.
 // The 'roundOn' parameter indicates on which value the round will happen.
+//
+// Inspired by the following gist:
+//
+// https://gist.github.com/DavidVaini/10308388
+// https://gist.github.com/pelegm/c48cff315cd223f7cf7b
 func Round(val float64, places int, roundOn float64) float64 {
 
 	pow := math.Pow(10, float64(places))
