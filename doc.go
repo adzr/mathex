@@ -25,5 +25,19 @@ Usage
 
 	$ go get -u github.com/adzr/mathex
 
+Then, import the package:
+
+  import (
+    "github.com/adzr/mathex"
+  )
+
+Example
+
+  // This will output 1.65326
+  fmt.Printf("%v\n", mathex.Round(1.653264418543275, 5, 0.5))
+
+  // Same with a negative number, this will output -1.65326
+  fmt.Printf("%v\n", mathex.Round(-1.653264418543275, 5, 0.5))
+
 */
 package mathex
