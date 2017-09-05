@@ -17,7 +17,9 @@ limitations under the License.
 // Package mathex provides some common math functions that complements the standard math package.
 package mathex
 
-import "math"
+import (
+	"math"
+)
 
 // Round takes a float64 val and rounds it to the nearest decimal places taking into account the roundOn value and returning the new float64 result back.
 //
@@ -28,20 +30,33 @@ import "math"
 // Round(0.62, 0, 0.5)			=> 1
 // Round(92, -1, 0.5)			=> 90
 // Round(92, -1, 0.1)			=> 100
+// Round(-1.653265718543275, 5, 0.5)	=> -1.65327
+// Round(-0.62, 1, 0.5)			=> -0.6
+// Round(-0.62, 1, 0.2)			=> -0.7
+// Round(-0.62, 0, 0.5)			=> -1
+// Round(-92, -1, 0.5)			=> -90
+// Round(-92, -1, 0.1)			=> -100
 //
 // The 'places' parameter indicates how many places the decimal point will move.
 // The 'roundOn' parameter indicates on which value the round will happen.
 func Round(val float64, places int, roundOn float64) float64 {
 
 	pow := math.Pow(10, float64(places))
-
-	scaled := pow * val
-
+	signed := math.Signbit(val)
+	scaled := pow * math.Abs(val)
 	_, div := math.Modf(scaled)
 
+	var result float64
+
 	if div >= roundOn {
-		return math.Ceil(scaled) / pow
+		result = math.Ceil(scaled) / pow
+	} else {
+		result = math.Floor(scaled) / pow
 	}
 
-	return math.Floor(scaled) / pow
+	if signed {
+		return result * -1
+	}
+
+	return result
 }
