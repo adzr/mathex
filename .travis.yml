@@ -4,4 +4,7 @@ go:
   - master
 
 script:
-  - go test -v -race -covermode atomic -coverprofile=$TRAVIS_BUILD_DIR/coverage ./... && bash <(curl -s https://codecov.io/bash)
+  - go test -v -race -covermode=atomic -coverprofile=coverage.txt ./...
+  
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
